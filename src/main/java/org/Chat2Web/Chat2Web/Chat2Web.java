@@ -17,10 +17,11 @@ public final class Chat2Web extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         System.out.println("Starting...");
 
         if(getConfig().getString("address")==null || getConfig().getString("sender-type")==null) {
-            System.out.println("Wrong plugin configuration! Plugin will continue work as \'echo\' plugin");
+            System.out.println("Wrong configuration! Plugin will continue work as \'echo\' plugin");
             Address = "not configured";
             SenderType = "not configured";
         }
@@ -33,8 +34,9 @@ public final class Chat2Web extends JavaPlugin implements Listener {
                 MessageSender = new TCPSender();
                 break;
              default:
-                MessageSender = new EchoSender();
-                break;
+                 System.out.println("Wrong configuration! Plugin will continue work as \'echo\' plugin");
+                 MessageSender = new EchoSender();
+                 break;
         }
         getServer().getPluginManager().registerEvents(this, this);
     }
