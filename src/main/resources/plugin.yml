@@ -1,0 +1,4 @@
+name: Chat2Web
+version: '1.0-SNAPSHOT'
+main: org.Chat2Web.Chat2Web.Chat2Web
+api-version: '1.21'
