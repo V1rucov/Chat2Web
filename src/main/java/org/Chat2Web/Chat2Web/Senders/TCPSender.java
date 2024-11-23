@@ -10,8 +10,8 @@ import java.nio.charset.StandardCharsets;
 public class TCPSender implements ISender {
 
     @Override
-    public void Send(String address, ChatMessage msg) {
-        String[] addr = address.split(":");
+    public void Send(String argument, ChatMessage msg) {
+        String[] addr = argument.split(":");
         String serialized = "{\"Username\":\""+msg.Username+"\", \"date\":\""+msg.date.toString()+"\", \"Message\":\""+msg.Message+"\"}";
 
         try {
