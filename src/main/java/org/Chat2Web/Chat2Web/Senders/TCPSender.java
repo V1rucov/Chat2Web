@@ -19,6 +19,7 @@ public class TCPSender implements ISender {
             OutputStream outputStream = sock.getOutputStream();
             PrintWriter printWriter = new PrintWriter(outputStream, true);
             printWriter.write(serialized);
+            sock.close();
         } catch (Exception e) {
             System.out.println("O-oh! Something went wrong with tcp connection...");
         }

@@ -2,7 +2,7 @@ package org.Chat2Web.Chat2Web;
 
 import org.Chat2Web.Chat2Web.Senders.EchoSender;
 import org.Chat2Web.Chat2Web.Senders.ISender;
-import org.Chat2Web.Chat2Web.Senders.CurlSender;
+import org.Chat2Web.Chat2Web.Senders.PostSender;
 import org.Chat2Web.Chat2Web.Senders.TCPSender;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,8 +35,8 @@ public final class Chat2Web extends JavaPlugin implements Listener {
             case "tcp":
                 MessageSender = new TCPSender();
                 break;
-            case "curl":
-                MessageSender = new CurlSender();
+            case "post":
+                MessageSender = new PostSender();
                 break;
             default:
                 System.out.println("Wrong configuration! Plugin will continue work as \'echo\' plugin");

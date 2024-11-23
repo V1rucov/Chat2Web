@@ -1,2 +1,2 @@
-sender-type: 'curl'
+sender-type: 'post'
 argument: '192.168.0.10:5000/receive'
